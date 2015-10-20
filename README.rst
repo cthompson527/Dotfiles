@@ -1,3 +1,6 @@
+THIS IS ORIGINALLY COPIED FROM haridas AT: https://github.com/haridas/Dotfiles
+I MADE FEW OF MY OWN CHANGES, BUT ALMOST ALL THE CREDIT GOES TO HIM.
+
 My Dot Files
 ============
 

@@ -35,9 +35,10 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 
-"set relativenumber
+"set relativenumber. to turn off relative, change relativenumber to norelative
+"number
 set number
-set norelativenumber
+set relativenumber
 
 "set undofile
 set shell=/bin/bash
@@ -75,6 +76,9 @@ nnoremap <leader><space> :noh<cr>
 "nnoremap <tab> %
 "vnoremap <tab> %
 
+"Map Settings for pageUp and pageDown
+map fj <C-f> 
+map fk <C-b>
 
 " Make Vim to handle long lines nicely.
 set wrap
@@ -131,7 +135,7 @@ nnoremap <leader>v V`]
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " jj For Qicker Escaping between normal and editing mode.
-"inoremap jj <ESC>
+inoremap jj <ESC>
 
 
 " Working with split screen nicely
