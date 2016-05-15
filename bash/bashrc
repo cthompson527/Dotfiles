@@ -104,7 +104,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias activate='test -d ENV && source ./ENV/bin/activate || echo "No Virtualenv in the current folder"'
     alias mkenv='test -d ENV && echo "Already exists" || virtualenv --system-site-packages ENV; activate'
 
-
 fi
 
 # some more ls aliases
