@@ -37,8 +37,8 @@
 [submodule "vim-files/vim/bundle/YouCompleteMe"]
   path = vim-files/vim/bundle/YouCompleteMe
   url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "vim-files/vim/bundle/vim-closing"]
-  path = vim-files/vim/bundle/vim-closing
+[submodule "vim-files/vim/bundle/vim-closetag"]
+  path = vim-files/vim/bundle/vim-closetag
   url = https://github.com/alvan/vim-closetag.git 
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
