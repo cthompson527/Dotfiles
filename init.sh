@@ -7,7 +7,7 @@ then
     cd ~/Dotfiles
     git pull origin master
 else
-    git clone https://github.com/haridas/Dotfiles.git ~/Dotfiles
+    git clone https://github.com/cthompson527/Dotfiles.git ~/Dotfiles
 fi
 
 
