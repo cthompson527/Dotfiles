@@ -37,11 +37,20 @@ then
     ln -s ~/Dotfiles/tmux.conf ~/.tmux.conf
 fi
 
+if [ ! -e ~/.zshrc ]
+then
+    ln -s ~/Dotfiles/zsh/zshrc ~/.zshrc
+fi
+
+if [ ! -e ~/.oh-my-zsh ]
+then
+    ln -s ~/Dotfiles/zsh/oh-my-zsh ~/.oh-my-zsh
+fi
+
+# Intiall vim with all scripting language support and add python dependencies.
+sudo apt-get install vim-nox ruby-dev python-dev python3-dev python-pip python3-pip
+
 # Build the command-t
-
-# Intiall vim with all scripting language support.
-sudo apt-get install vim-nox ruby-dev
-
 cd ~/Dotfiles/vim-files/vim/bundle/Command-T/ruby/command-t
 ruby extconf.rb
 make
