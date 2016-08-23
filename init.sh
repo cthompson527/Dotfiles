@@ -48,10 +48,10 @@ then
 fi
 
 # Intiall vim with all scripting language support and add python dependencies.
-sudo apt-get install vim-nox ruby-dev python-dev python3-dev python-pip python3-pip
+sudo apt-get install vim-nox python3-dev python3-pip
 
 # Build the command-t
-cd ~/Dotfiles/vim-files/vim/bundle/Command-T/ruby/command-t
-ruby extconf.rb
-make
+# cd ~/Dotfiles/vim-files/vim/bundle/Command-T/ruby/command-t
+# ruby extconf.rb
+# make
 
