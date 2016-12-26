@@ -30,16 +30,13 @@
 	url = https://github.com/fatih/vim-go.git
 [submodule "vim-files/vim/bundle/rust.vim"]
 	path = vim-files/vim/bundle/rust.vim
-  url = https://github.com/rust-lang/rust.vim.git
-[submodule "vim-files/vim/bundle/YCM-Generator"]
-  path = vim-files/vim/bundle/YCM-Generator
-  url = https://github.com/rdnetto/YCM-Generator.git
+  	url = https://github.com/rust-lang/rust.vim.git
 [submodule "vim-files/vim/bundle/YouCompleteMe"]
-  path = vim-files/vim/bundle/YouCompleteMe
-  url = https://github.com/Valloric/YouCompleteMe.git
+  	path = vim-files/vim/bundle/YouCompleteMe
+  	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "vim-files/vim/bundle/vim-closetag"]
-  path = vim-files/vim/bundle/vim-closetag
-  url = https://github.com/alvan/vim-closetag.git 
+  	path = vim-files/vim/bundle/vim-closetag
+  	url = https://github.com/alvan/vim-closetag.git 
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
