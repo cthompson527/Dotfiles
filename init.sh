@@ -66,12 +66,15 @@ ln -s ~/Dotfiles/fzf.zsh ~/.fzf.zsh
 brew install tmux
 
 # install vscode and setup settings
-brew cask instal visual-studio-code
+brew cask install visual-studio-code
 rm ~/Library/Application\ Support/Code/User/settings.json
 ln -s ~/Dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 # install slack
 brew cask install slack
+
+# install zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # install powerlevel9k for .oh-my-zsh
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
