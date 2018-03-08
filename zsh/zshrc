@@ -94,6 +94,11 @@ alias brewci='brew cask install'
 alias gff='git flow feature'
 alias gfr='git flow release'
 alias gfh='git flow hotfix'
+alias gffc='git flow feature checkout'
+alias gffs='git flow feature start'
+alias gffp='git flow feature publish'
+alias gffd='git flow feature delete'
+alias gfft='git flow feature track'
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Users/corythompson/Documents/OneDrive/Developer/cocos2d-x-3.7/tools/cocos2d-console/bin
