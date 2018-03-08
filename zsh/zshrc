@@ -91,6 +91,9 @@ alias brews='brew search'
 alias brewp='brew prune'
 alias brewd='brew doctor'
 alias brewci='brew cask install'
+alias gff='git flow feature'
+alias gfr='git flow release'
+alias gfh='git flow hotfix'
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Users/corythompson/Documents/OneDrive/Developer/cocos2d-x-3.7/tools/cocos2d-console/bin
@@ -111,7 +114,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # edit powerline9k
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs ip time)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

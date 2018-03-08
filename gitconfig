@@ -1,0 +1,11 @@
+[user]
+	name = Cory A Thompson
+	email = cthompson@tamhsc.edu
+[commit]
+	template = /Users/coryathompson/.stCommitMsg
+[mergetool "araxis"]
+	path = /Applications/Araxis Merge.app/Contents/Utilities/compare
+[difftool "araxis"]
+	path = /Applications/Araxis Merge.app/Contents/Utilities/compare
+[difftool]
+	prompt = false

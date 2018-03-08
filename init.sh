@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt-get install -y git
-
 if [ -d ~/Dotfiles ]
 then
     cd ~/Dotfiles
@@ -9,7 +7,6 @@ then
 else
     git clone https://github.com/cthompson527/Dotfiles.git ~/Dotfiles
 fi
-
 
 # Got to Git repo
 cd ~/Dotfiles
@@ -47,11 +44,29 @@ then
     ln -s ~/Dotfiles/zsh/oh-my-zsh ~/.oh-my-zsh
 fi
 
-# Intiall vim with all scripting language support and add python dependencies.
-sudo apt-get install vim-nox python3-dev python3-pip
+if [ ! -e ~/.gitconfig ]
+then
+    ln -s ~/Dotfiles/gitconfig ~/.gitconfig
+fi
 
-# Build the command-t
-# cd ~/Dotfiles/vim-files/vim/bundle/Command-T/ruby/command-t
-# ruby extconf.rb
-# make
+if [ ! -e ~/.fzf.zsh ]
+then
+    ln -s ~/Dotfiles/.fzf.zsh ~/fzf.zsh
+fi
 
+# install zsh and set as default shell
+brew install zsh
+sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
+
+# install fzf
+brew install fzf
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
+
+# install vscode and setup settings
+brew cask instal visual-studio-code
+rm ~/Library/Application\ Support/Code/User/settings.json
+ln -s ~/Dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+# install slack
+brew cask install slack

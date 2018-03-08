@@ -2,9 +2,6 @@
 
 " Pathogen settings.
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
-Helptags
 filetype plugin indent on
 
 " Make vim incompatbile to vi.
@@ -247,9 +244,6 @@ endif
 
 set background=dark
 "let g:solarized_termcolors=256
-colorscheme badwolf
-
-
 
 " Source the vimrc file after saving it
 "autocmd bufwritepost .vimrc source ~/.vimrc
