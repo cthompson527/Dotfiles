@@ -51,12 +51,13 @@ fi
 
 if [ ! -e ~/.fzf.zsh ]
 then
-    ln -s ~/Dotfiles/.fzf.zsh ~/fzf.zsh
+    ln -s ~/Dotfiles/fzf.zsh ~/.fzf.zsh
 fi
 
 # install zsh and set as default shell
 brew install zsh
-sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
+sudo -s 'echo /usr/local/bin/zsh >> /etc/shells'
+chsh -s /usr/local/bin/zsh
 
 # install fzf
 brew install fzf
@@ -70,3 +71,6 @@ ln -s ~/Dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/s
 
 # install slack
 brew cask install slack
+
+# install powerlevel9k for .oh-my-zsh
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
