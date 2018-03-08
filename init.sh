@@ -49,11 +49,6 @@ then
     ln -s ~/Dotfiles/gitconfig ~/.gitconfig
 fi
 
-if [ ! -e ~/.fzf.zsh ]
-then
-    ln -s ~/Dotfiles/fzf.zsh ~/.fzf.zsh
-fi
-
 # install zsh and set as default shell
 brew install zsh
 sudo -s 'echo /usr/local/bin/zsh >> /etc/shells'
@@ -63,6 +58,12 @@ chsh -s /usr/local/bin/zsh
 brew install fzf
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
+# setup fzf config
+rm ~/.fzf.zsh
+ln -s ~/Dotfiles/fzf.zsh ~/.fzf.zsh
+
+# install tmux
+brew install tmux
 
 # install vscode and setup settings
 brew cask instal visual-studio-code
@@ -74,3 +75,5 @@ brew cask install slack
 
 # install powerlevel9k for .oh-my-zsh
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
+sh setup-defaults.sh
