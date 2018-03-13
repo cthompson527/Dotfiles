@@ -142,3 +142,4 @@ defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "l
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false
