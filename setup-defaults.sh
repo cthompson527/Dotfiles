@@ -1,6 +1,7 @@
 # source https://github.com/donnemartin/dev-setup/blob/master/osx.sh
 
 # setup fast key repeat
+defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
@@ -132,8 +133,11 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# Show recent applications in Dock
+defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }'
+
 ###############################################################################
-# Dock, Dashboard, and hot corners                                            #
+# iTerm                                                                       #
 ###############################################################################
 
 # Don’t display the annoying prompt when quitting iTerm
