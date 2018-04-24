@@ -92,8 +92,11 @@ alias brewp='brew prune'
 alias brewd='brew doctor'
 alias brewci='brew cask install'
 alias gcd='git checkout develop'
+alias gmd='git merge develop'
 alias gdtt='git difftool -t'
 alias gdtta='gdtt araxis'
+alias gmtt='git mergetool -t'
+alias gmtta='gmtt araxis'
 alias gff='git flow feature'
 alias gfr='git flow release'
 alias gfh='git flow hotfix'
@@ -126,3 +129,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs ip time)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# add support for minishift
+export MINISHIFT_USERNAME=cory
+export MINISHIFT_PASSWORD=cory

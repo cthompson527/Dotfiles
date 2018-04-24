@@ -5,6 +5,7 @@
     "workbench.iconTheme": "vscode-icons",
     "files.autoSave": "off",
     "editor.fontFamily": "'Roboto Mono for Powerline', 'Source Code Pro for Powerline'",
+    "editor.tabSize": 2,
     "window.zoomLevel": 0,
     "vim.easymotion": true,
     "vim.incsearch": true,
@@ -66,4 +67,14 @@
         "statusBar.debuggingBackground": "#005f5f"
     },
     "git.autofetch": true,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
+    },
 }

@@ -8,4 +8,14 @@
 [difftool "araxis"]
 	path = /Applications/Araxis Merge.app/Contents/Utilities/compare
 [difftool]
-	prompt = false
+  prompt = false
+[mergetool]
+  prompt = false
+[core]
+	excludesfile = /Users/cory/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
