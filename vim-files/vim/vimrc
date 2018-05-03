@@ -43,7 +43,7 @@ set lazyredraw
 set matchtime=3
 
 "Changing Leader Key
-let mapleader = ","
+let mapleader = "\\"
 """"
 " Set title to window
 set title 
@@ -133,6 +133,19 @@ nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " jj For Qicker Escaping between normal and editing mode.
 inoremap jj <ESC>
+
+" goto definition
+nmap <leader>d <ESC>:TsuDefinition<cr>
+
+" goto type definition
+nmap <leader>t <ESC>:TsuTypeDefinition<cr>
+
+" go back
+nmap <leader>b <C-t>
+
+" remap all Ctrl+w to Ctrl+c
+nmap <C-c> <C-w>
+
 
 
 " Working with split screen nicely
@@ -253,38 +266,60 @@ set background=dark
 
 " ========== Plugin Settings =========="
 
-" Mapping to NERDTree
-nnoremap <C-n> :NERDTreeToggle<cr>
-let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$']
+call plug#begin()
 
-" Mini Buffer some settigns."
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+" Plug 'airblade/vim-gitgutter'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/vim-js-pretty-template'
+Plug 'jason0x43/vim-js-indent'
+Plug 'mhartington/vim-typings'
+Plug 'Shougo/vimproc.vim'
+Plug 'Quramy/tsuquyomi'
+"Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'isobit/vim-darcula-colors'
+Plug 'vim-scripts/AutoComplPop'
 
-" Tab color settings to make it more visible.
-hi MBEChanged ctermfg=white
-hi MBENormal ctermfg=white
+call plug#end()
 
-" Rope Plugin settings
-" imap <leader>j <ESC>:RopeGotoDefinition<cr>
-nmap <leader>j <ESC>:RopeGotoDefinition<cr>
+let g:tsuquyomi_completion_detail = 1
+colorscheme darcula
 
-" Tagbar key bindings."
-nmap <leader>l <ESC>:TagbarToggle<cr>
-imap <leader>l <ESC>:TagbarToggle<cr>i
-
-" Necessary add for YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-" Snipmate remap settings. It's binding overwritten standard
-" bindings.
-" Snipmate using bellow VIM's default keys, just unmap it.
-" autocmd VimEnter * unmap! <C-i>
-
+" old packaging. checking vim-plug before removing
+"" Mapping to NERDTree
+"nnoremap <C-n> :NERDTreeToggle<cr>
+"let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$']
+"
+"" Mini Buffer some settigns."
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1
+"
+"" Tab color settings to make it more visible.
+"hi MBEChanged ctermfg=white
+"hi MBENormal ctermfg=white
+"
+"" Rope Plugin settings
+"" imap <leader>j <ESC>:RopeGotoDefinition<cr>
+"nmap <leader>j <ESC>:RopeGotoDefinition<cr>
+"
+"" Tagbar key bindings."
+"nmap <leader>l <ESC>:TagbarToggle<cr>
+"imap <leader>l <ESC>:TagbarToggle<cr>i
+"
+"" Necessary add for YouCompleteMe
+"let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"
+"" Snipmate remap settings. It's binding overwritten standard
+"" bindings.
+"" Snipmate using bellow VIM's default keys, just unmap it.
+"" autocmd VimEnter * unmap! <C-i>
+"
 
 " =========== END Plugin Settings =========="
 "
