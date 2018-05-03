@@ -48,7 +48,7 @@ let mapleader = "\\"
 " Set title to window
 set title 
 " Dictionary path, from which the words are being looked up.
-set dictionary=/usr/share/dict/words
+"set dictionary=/usr/share/dict/words
 
 " Make pasting done without any indentation break."
 set pastetoggle=<F3>
@@ -276,13 +276,38 @@ Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'jason0x43/vim-js-indent'
 Plug 'mhartington/vim-typings'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Quramy/tsuquyomi'
 "Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'isobit/vim-darcula-colors'
-Plug 'vim-scripts/AutoComplPop'
+"Plug 'Shougo/neocomplete'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'vim-scripts/AutoComplPop'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
+
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists(“s:std_in”) | NERDTree | endif
+let NERDTreeDirArrows = 1
+let g:deoplete#enable_at_startup = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+let g:syntastic_typescript_checkers = ['tslint']
+
+imap <leader>a <C-x><C-o>
 
 let g:tsuquyomi_completion_detail = 1
 colorscheme darcula
