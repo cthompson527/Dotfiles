@@ -1,8 +1,9 @@
 [user]
 	name = Cory A Thompson
-	email = cthompson@tamhsc.edu
+	email = cthompson@medicine.tamhsc.edu
 [commit]
 	template = /Users/coryathompson/.stCommitMsg
+	gpgSign = true
 [mergetool "araxis"]
 	path = /Applications/Araxis Merge.app/Contents/Utilities/compare
 [difftool "araxis"]
@@ -19,3 +20,7 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[gpg]
+	program = /usr/local/bin/krgpg
+[tag]
+	forceSignAnnotated = true

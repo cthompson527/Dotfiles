@@ -133,3 +133,8 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs ip tim
 # add support for minishift
 export MINISHIFT_USERNAME=cory
 export MINISHIFT_PASSWORD=cory
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Added by Krypton
+export GPG_TTY=$(tty)
