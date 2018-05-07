@@ -250,7 +250,7 @@ if has("gui_running")
     set guioptions-=m
     set listchars=tab:▸\ ,eol:¬         " Invisibles using the Textmate style
 
-    set guifont=Cousine\ 10
+    set guifont=RobotoMono\ Nerd\ Font\ Mono
 else
     set t_Co=256
 endif
@@ -271,22 +271,21 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
-" Plug 'airblade/vim-gitgutter'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'jason0x43/vim-js-indent'
 Plug 'mhartington/vim-typings'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Quramy/tsuquyomi'
-"Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'isobit/vim-darcula-colors'
-"Plug 'Shougo/neocomplete'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-"Plug 'vim-scripts/AutoComplPop'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
+Plug 'ryanoasis/vim-devicons'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 
 call plug#end()
 
