@@ -38,7 +38,7 @@ set number
 set relativenumber
 
 "set undofile
-set shell=/bin/bash
+set shell=/usr/local/bin/zsh
 set lazyredraw
 set matchtime=3
 
@@ -130,6 +130,10 @@ nnoremap <leader>v V`]
 
 " ,ev Shortcut to edit .vimrc file on the fly on a vertical window.
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" start a shell, clear the console, and run tests
+nnoremap <leader>z :!clear && yarn test<cr>
+
 
 " jj For Qicker Escaping between normal and editing mode.
 inoremap jj <ESC>
@@ -250,7 +254,9 @@ if has("gui_running")
     set guioptions-=m
     set listchars=tab:▸\ ,eol:¬         " Invisibles using the Textmate style
 
-    set guifont=RobotoMono\ Nerd\ Font\ Mono
+    "set guifont=RobotoMono\ Nerd\ Font\ Mono
+    set macligatures
+    set guifont=Fira\ Code:h12
 else
     set t_Co=256
 endif
@@ -310,6 +316,24 @@ imap <leader>a <C-x><C-o>
 
 let g:tsuquyomi_completion_detail = 1
 colorscheme darcula
+
+function s:Cursor_Moved()
+  let cur_pos = winline()
+  if g:last_pos == 0
+    set cul
+    let g:last_pos = cur_pos
+    return
+  endif
+  let diff = g:last_pos - cur_pos
+  if diff > 1 || diff < -1
+    set cul
+  else
+    set nocul
+  endif
+  let g:last_pos = cur_pos
+endfunction
+autocmd CursorMoved,CursorMovedI * call s:Cursor_Moved()
+let g:last_pos = 0
 
 " old packaging. checking vim-plug before removing
 "" Mapping to NERDTree
