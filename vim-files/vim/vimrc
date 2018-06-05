@@ -291,6 +291,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'jparise/vim-graphql'
 
 
 call plug#end()
@@ -336,8 +338,8 @@ autocmd CursorMoved,CursorMovedI * call s:Cursor_Moved()
 let g:last_pos = 0
 
 " old packaging. checking vim-plug before removing
-"" Mapping to NERDTree
-"nnoremap <C-n> :NERDTreeToggle<cr>
+" Mapping to NERDTree
+nnoremap <C-n> :NERDTreeToggle<cr>
 "let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$']
 "
 "" Mini Buffer some settigns."

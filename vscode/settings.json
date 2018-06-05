@@ -4,7 +4,8 @@
     "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "vscode-icons",
     "files.autoSave": "off",
-    "editor.fontFamily": "'Roboto Mono for Powerline', 'Source Code Pro for Powerline'",
+    "editor.fontFamily": "'FuraCode Nerd Font', 'Roboto Mono for Powerline', 'Source Code Pro for Powerline'",
+    "editor.fontLigatures": true,
     "editor.tabSize": 2,
     "window.zoomLevel": 0,
     "vim.easymotion": true,
@@ -12,6 +13,7 @@
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
+    "vim.leader": "\\",
     "editor.lineNumbers": "relative",
     "vim.insertModeKeyBindings": [
         {
@@ -62,9 +64,9 @@
         "replace": "#000000"
     },
     "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
+        "statusBar.background": "#5f0000",
+        "statusBar.noFolderBackground": "#5f0000",
+        "statusBar.debuggingBackground": "#5f0000"
     },
     "git.autofetch": true,
     "gitlens.advanced.messages": {
@@ -77,4 +79,5 @@
         "suppressResultsExplorerNotice": false,
         "suppressShowKeyBindingsNotice": true
     },
+    "gitlens.historyExplorer.enabled": true,
 }
