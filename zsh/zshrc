@@ -55,6 +55,7 @@ plugins=(git brew brew-cask osx tmux powerline zsh-autosuggestions zsh-syntax-hi
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=$PATH:/Applications/Araxis\ Merge.app/Contents/Utilities
+export PATH=$PATH:$HOME/.composer/vendor/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
