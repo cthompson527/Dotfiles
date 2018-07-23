@@ -7,6 +7,7 @@
     "editor.fontFamily": "'FuraCode Nerd Font', 'Roboto Mono for Powerline', 'Source Code Pro for Powerline'",
     "editor.fontLigatures": true,
     "editor.tabSize": 2,
+    "editor.formatOnSave": true,
     "window.zoomLevel": 0,
     "vim.easymotion": true,
     "vim.incsearch": true,
@@ -21,7 +22,7 @@
             "after": ["<Esc>"]
         }
     ],
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["<leader>","w"],
             "after": [],
@@ -64,9 +65,9 @@
         "replace": "#000000"
     },
     "workbench.colorCustomizations": {
-        "statusBar.background": "#5f0000",
-        "statusBar.noFolderBackground": "#5f0000",
-        "statusBar.debuggingBackground": "#5f0000"
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
     },
     "git.autofetch": true,
     "gitlens.advanced.messages": {

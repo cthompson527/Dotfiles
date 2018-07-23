@@ -105,6 +105,7 @@ alias gffs='git flow feature start'
 alias gffp='git flow feature publish'
 alias gffd='git flow feature delete'
 alias gfft='git flow feature track'
+alias kraken="open -na 'GitKraken' --args -p $(pwd)"
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Users/corythompson/Documents/OneDrive/Developer/cocos2d-x-3.7/tools/cocos2d-console/bin
@@ -134,7 +135,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs ip tim
 export MINISHIFT_USERNAME=cory
 export MINISHIFT_PASSWORD=cory
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:$HOME/.composer/vendor/bin"
 
 # Added by Krypton
 export GPG_TTY=$(tty)
