@@ -49,6 +49,11 @@ then
     ln -s ~/Dotfiles/gitconfig ~/.gitconfig
 fi
 
+if [ ! -e ~/.npmrc ]
+then
+    ln -s ~/Dotfiles/npmrc ~/.npmrc
+fi
+
 # install zsh and set as default shell
 brew install zsh
 sudo -s 'echo /usr/local/bin/zsh >> /etc/shells'
