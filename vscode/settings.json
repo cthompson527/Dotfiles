@@ -18,13 +18,21 @@
     "editor.lineNumbers": "relative",
     "vim.insertModeKeyBindings": [
         {
-            "before": ["j","j"],
-            "after": ["<Esc>"]
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
         }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["<leader>","w"],
+            "before": [
+                "<leader>",
+                "w"
+            ],
             "after": [],
             "commands": [
                 {
@@ -34,8 +42,10 @@
             ]
         },
         {
-            "before":["<C-n>"],
-            "after":[],
+            "before": [
+                "<C-n>"
+            ],
+            "after": [],
             "commands": [
                 {
                     "command": ":nohl"
@@ -43,20 +53,30 @@
             ]
         },
         {
-            "before":["f", "j"],
-            "after":["<C-f>"]
+            "before": [
+                "f",
+                "j"
+            ],
+            "after": [
+                "<C-f>"
+            ]
         },
         {
-            "before":["f", "k"],
-            "after":["<C-b>"]
+            "before": [
+                "f",
+                "k"
+            ],
+            "after": [
+                "<C-b>"
+            ]
         }
     ],
-    "vim.handleKeys":{
+    "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false
     },
     "vim.statusBarColorControl": true,
-    "vim.statusBarColors" : {
+    "vim.statusBarColors": {
         "normal": "#005f5f",
         "insert": "#5f0000",
         "visual": "#5f00af",
