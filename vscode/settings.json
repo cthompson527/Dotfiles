@@ -64,11 +64,11 @@
     "visualblock": "#86592d",
     "replace": "#000000"
   },
-"workbench.colorCustomizations": {
-  "statusBar.background": "#005f5f",
-  "statusBar.noFolderBackground": "#005f5f",
-  "statusBar.debuggingBackground": "#005f5f"
-},
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f"
+  },
   "git.autofetch": true,
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,

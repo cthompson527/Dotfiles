@@ -1,0 +1,4 @@
+source ~/.vimrc
+let mapleader="\"
+map \w :action SaveAll<CR>
+map \r :action ReformatCode<CR>
