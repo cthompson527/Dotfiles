@@ -1,84 +1,87 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "terminal.integrated.shell.osx": "/bin/zsh",
-    "workbench.colorTheme": "Monokai",
-    "workbench.iconTheme": "vscode-icons",
-    "files.autoSave": "off",
-    "editor.fontFamily": "'FuraCode Nerd Font', 'Roboto Mono for Powerline', 'Source Code Pro for Powerline'",
-    "editor.fontLigatures": true,
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true,
-    "window.zoomLevel": 0,
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.leader": "\\",
-    "editor.lineNumbers": "relative",
-    "vim.insertModeKeyBindings": [
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "workbench.colorTheme": "Monokai",
+  "workbench.iconTheme": "vscode-icons",
+  "files.autoSave": "off",
+  "editor.fontFamily": "'FuraCode Nerd Font', 'Roboto Mono for Powerline', 'Source Code Pro for Powerline'",
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "window.zoomLevel": 0,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": "\\",
+  "editor.lineNumbers": "relative",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "w"],
+      "after": [],
+      "commands": [
         {
-            "before": ["j","j"],
-            "after": ["<Esc>"]
+          "command": "workbench.action.files.save",
+          "args": []
         }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
+      ]
+    },
+    {
+      "before": ["<C-n>"],
+      "after": [],
+      "commands": [
         {
-            "before": ["<leader>","w"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.files.save",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before":["<C-n>"],
-            "after":[],
-            "commands": [
-                {
-                    "command": ":nohl"
-                }
-            ]
-        },
-        {
-            "before":["f", "j"],
-            "after":["<C-f>"]
-        },
-        {
-            "before":["f", "k"],
-            "after":["<C-b>"]
+          "command": ":nohl"
         }
-    ],
-    "vim.handleKeys":{
-        "<C-a>": false,
-        "<C-f>": false
+      ]
     },
-    "vim.statusBarColorControl": true,
-    "vim.statusBarColors" : {
-        "normal": "#005f5f",
-        "insert": "#5f0000",
-        "visual": "#5f00af",
-        "visualline": "#005f87",
-        "visualblock": "#86592d",
-        "replace": "#000000"
+    {
+      "before": ["f", "j"],
+      "after": ["<C-f>"]
     },
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    },
-    "git.autofetch": true,
-    "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressResultsExplorerNotice": false,
-        "suppressShowKeyBindingsNotice": true
-    },
-    "gitlens.historyExplorer.enabled": true,
+    {
+      "before": ["f", "k"],
+      "after": ["<C-b>"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors": {
+    "normal": "#005f5f",
+    "insert": "#5f0000",
+    "visual": "#5f00af",
+    "visualline": "#005f87",
+    "visualblock": "#86592d",
+    "replace": "#000000"
+  },
+"workbench.colorCustomizations": {
+  "statusBar.background": "#005f5f",
+  "statusBar.noFolderBackground": "#005f5f",
+  "statusBar.debuggingBackground": "#005f5f"
+},
+  "git.autofetch": true,
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "flow.useNPMPackagedFlow": true,
+  "javascript.validate.enable": false,
+  "workbench.editor.showTabs": true
 }
