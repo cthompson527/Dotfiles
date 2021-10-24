@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = cory.thompson527@gmail.com
+	name = Cory Thompson
+[core]
+	editor = nvim
