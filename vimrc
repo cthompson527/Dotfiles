@@ -51,5 +51,6 @@ let mapleader = "\\"
 "Pathogen
 execute pathogen#infect()
 
+colorscheme onedark
 
 
