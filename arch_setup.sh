@@ -62,3 +62,5 @@ git config --global user.name "Cory Thompson"
 #### install conan... ####
 pip install conan
 
+#### update PATH for Python libs... ####
+export PATH=$PATH:~/.local/bin
