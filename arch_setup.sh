@@ -16,7 +16,7 @@ sudo mv -v ~/mirrorlist.fastest /etc/pacman.d/mirrorlist
 sudo pacman -Syu --noconfirm
 
 #### installing dependencies... ####
-sudo pacman -S --noconfirm base-devel cmake unzip ninja tree-sitter curl git nodejs ncurses libffi glib2 lazygit
+sudo pacman -S --noconfirm base-devel cmake unzip ninja tree-sitter curl git nodejs ncurses libffi glib2 lazygit tmux
 sudo pacman -S --noconfirm community/tig community/ripgrep community/yarn
 sudo pacman -S --noconfirm extra/llvm extra/clang extra/python-pip
 
