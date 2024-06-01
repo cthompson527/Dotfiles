@@ -10,6 +10,7 @@ return {
         p = {
           name = "+project",
           R = { ":OverseerRun<CR>", "Project Run" },
+          t = { ":OverseerToggle<CR>", "Overseer Toggle" },
         },
       },
     })
