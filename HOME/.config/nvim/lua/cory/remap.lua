@@ -5,13 +5,14 @@ wk.register({
     ["<leader>"] = {
         w = {
             name = "+window",
-            v = { vim.cmd.vsplit, "Vertical Split"     },
-            s = { vim.cmd.split,  "Horizontal Split"   },
-            h = { "<C-w>h",       "Focus Left Window"  },
-            j = { "<C-w>j",       "Focus Down Window"  },
-            k = { "<C-w>k",       "Focus Up Window"    },
-            l = { "<C-w>l",       "Focus Right Window" },
-            d = { "<C-w>q",       "Close Window"       },
+            v = { vim.cmd.vsplit,  "Vertical Split"     },
+            s = { vim.cmd.split,   "Horizontal Split"   },
+            h = { "<C-w>h",        "Focus Left Window"  },
+            j = { "<C-w>j",        "Focus Down Window"  },
+            k = { "<C-w>k",        "Focus Up Window"    },
+            l = { "<C-w>l",        "Focus Right Window" },
+            d = { "<C-w>q",        "Close Window"       },
+            m = { ":Maximize<CR>", "Maximize Window"    },
         },
         p = {
             name = "+project",
