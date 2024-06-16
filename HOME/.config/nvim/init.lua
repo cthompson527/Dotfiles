@@ -1,5 +1,2 @@
-vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
--- vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
-
-require("cory")
-
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

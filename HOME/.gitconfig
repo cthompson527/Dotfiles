@@ -7,9 +7,9 @@
     rebase = false
     ffonly = true
 [diff]
-    tool = vimdiff
+    tool = nvim -d
 [merge]
-    tool = vimdiff
+    tool = nvim -d
 [color]
     ui = auto
 [core]
