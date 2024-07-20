@@ -8,6 +8,9 @@ wk.register({
   o = {
     name = "+open",
   },
+  h = {
+    name = "+harpoon",
+  },
 }, { prefix = "<leader>" })
 
 -- windows
@@ -52,15 +55,36 @@ local harpoon = require("harpoon")
 harpoon:setup()
 -- REQUIRED
 
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "Harpoon Mark" })
-vim.keymap.set("n", "<leader>H", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon List" })
-vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon List" })
+vim.keymap.set("n", "<leader>a", function()
+  harpoon:list():add()
+end, { desc = "Harpoon Mark" })
+vim.keymap.set("n", "<leader>H", function()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = "Harpoon List" })
+vim.keymap.set("n", "<leader>hh", function()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = "Harpoon List" })
 
-vim.keymap.set("n", "<leader>h1", function() harpoon:list():select(1) end, { desc = "Harpoon Select 1" })
-vim.keymap.set("n", "<leader>h2", function() harpoon:list():select(2) end, { desc = "Harpoon Select 2" })
-vim.keymap.set("n", "<leader>h3", function() harpoon:list():select(3) end, { desc = "Harpoon Select 3" })
-vim.keymap.set("n", "<leader>h4", function() harpoon:list():select(4) end, { desc = "Harpoon Select 4" })
+vim.keymap.set("n", "<leader>h1", function()
+  harpoon:list():select(1)
+end, { desc = "Harpoon Select 1" })
+vim.keymap.set("n", "<leader>h2", function()
+  harpoon:list():select(2)
+end, { desc = "Harpoon Select 2" })
+vim.keymap.set("n", "<leader>h3", function()
+  harpoon:list():select(3)
+end, { desc = "Harpoon Select 3" })
+vim.keymap.set("n", "<leader>h4", function()
+  harpoon:list():select(4)
+end, { desc = "Harpoon Select 4" })
 
 -- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<leader>hp", function() harpoon:list():prev() end, { desc = "Harpoon Previous Buffer" })
-vim.keymap.set("n", "<leader>hn", function() harpoon:list():next() end, { desc = "Harpoon Next Buffer" })
+vim.keymap.set("n", "<leader>hp", function()
+  harpoon:list():prev()
+end, { desc = "Harpoon Previous Buffer" })
+vim.keymap.set("n", "<leader>hn", function()
+  harpoon:list():next()
+end, { desc = "Harpoon Next Buffer" })
+vim.keymap.set("n", "<leader>hc", function()
+  harpoon:list():clear()
+end, { desc = "Harpoon Clear" })

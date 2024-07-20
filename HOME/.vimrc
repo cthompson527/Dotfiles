@@ -41,16 +41,12 @@ set number
 set relativenumber
 
 "set undofile
-set shell=/usr/local/bin/zsh
+" set shell=/usr/local/bin/zsh
 set lazyredraw
 set matchtime=3
 
 "Changing Leader Key
+set leader = " "
 let mapleader = "\\"
-
-"Pathogen
-execute pathogen#infect()
-
-colorscheme onedark
 
 

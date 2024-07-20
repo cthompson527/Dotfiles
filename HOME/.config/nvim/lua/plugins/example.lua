@@ -174,17 +174,6 @@ return {
     end,
   },
 
-  -- -- or you can return new options to override all the defaults
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   event = "VeryLazy",
-  --   opts = function()
-  --     return {
-  --       --[[add your custom lualine config here]]
-  --     }
-  --   end,
-  -- },
-
   -- use mini.starter instead of alpha
   { import = "lazyvim.plugins.extras.ui.mini-starter" },
 
@@ -281,6 +270,23 @@ return {
         { "size", highlight = "Special" },
         { "mtime", highlight = "Number" },
         "icon",
+        keymaps = {
+          ["g?"] = "actions.show_help",
+          ["<CR>"] = "actions.select",
+          ["<C-s>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
+          ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
+          ["<C-p>"] = "actions.preview",
+          ["<C-c>"] = "actions.close",
+          ["-"] = "actions.parent",
+          ["_"] = "actions.open_cwd",
+          ["`"] = "actions.cd",
+          ["~"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory" },
+          ["gs"] = "actions.change_sort",
+          ["gx"] = "actions.open_external",
+          ["g."] = "actions.toggle_hidden",
+          ["g\\"] = "actions.toggle_trash",
+        },
+        use_default_keymaps = false,
       },
     },
   },
