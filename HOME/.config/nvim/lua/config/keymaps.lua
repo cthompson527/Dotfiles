@@ -21,7 +21,7 @@ vim.keymap.set("n", "<leader>wj", "<C-w>j", { desc = "Focus Down Window" })
 vim.keymap.set("n", "<leader>wk", "<C-w>k", { desc = "Focus Up Window" })
 vim.keymap.set("n", "<leader>wl", "<C-w>l", { desc = "Focus Right Window" })
 vim.keymap.set("n", "<leader>wd", "<C-w>q", { desc = "Focus Up Window" })
-vim.keymap.set("n", "<leader>wm", ":Maximize<CR>", { desc = "Maximize Window" })
+vim.keymap.set("n", "<leader>wm", "<cmd>Maximize<cr>", { desc = "Maximize Window" })
 
 -- Files
 vim.keymap.set("n", "<leader>o-", vim.cmd.Oil, { desc = "File Explorer" })
@@ -33,15 +33,15 @@ vim.keymap.set("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decreas
 vim.keymap.set("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 -- buffers
-vim.keymap.set("n", "<leader>bp", ":bprev<CR>", { desc = "Previous Buffer" })
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next Buffer" })
+vim.keymap.set("n", "<leader>bp", "<cmd>bprev<cr>", { desc = "Previous Buffer" })
+vim.keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
 -- files
-vim.keymap.set("n", "<leader>fs", ":wa<CR>", { desc = "Save All Files" })
+vim.keymap.set("n", "<leader>fs", "<cmd>wa<cr>", { desc = "Save All Files" })
 
 -- visual mode --
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
 vim.keymap.set("v", "jk", "<ESC>")
 -- end visual mmode --
 
