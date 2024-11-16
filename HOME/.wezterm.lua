@@ -3,7 +3,7 @@ local act = wezterm.action
 
 local config = {}
 
-config.font = wezterm.font("JetBrains Mono")
+config.font = wezterm.font("Victor Mono")
 config.color_scheme = "OneDark (base16)"
 config.font_size = 14
 config.window_background_opacity = 1

@@ -17,14 +17,16 @@ local permission_hlgroups = {
 }
 
 return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  -- add personal project-run
+  { "cthompson527/project-run.nvim" },
+
+  { "liuchengxu/space-vim-theme" },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "space_vim_theme",
     },
   },
 
