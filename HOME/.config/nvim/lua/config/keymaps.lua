@@ -3,15 +3,15 @@
 -- Add any additional keymaps here
 
 local wk = require("which-key")
+local neogit = require("neogit")
 
-wk.register({
-  o = {
-    name = "+open",
-  },
-  h = {
-    name = "+harpoon",
-  },
-}, { prefix = "<leader>" })
+wk.add({
+  mode = { "n", "v" },
+  { "<leader>o", group = "open" },
+  { "<leader>h", group = "harpoon" },
+  { "<leader>p", group = "project" },
+  { "<leader>g", group = "git" },
+})
 
 -- windows
 vim.keymap.set("n", "<leader>wv", vim.cmd.vsplit, { desc = "Vertical Split" })
@@ -25,12 +25,20 @@ vim.keymap.set("n", "<leader>wm", "<cmd>Maximize<cr>", { desc = "Maximize Window
 
 -- Files
 vim.keymap.set("n", "<leader>o-", vim.cmd.Oil, { desc = "File Explorer" })
+vim.keymap.set("n", "<leader>oe", "<cmd>Neotree current<cr>", { desc = "NeoTree" })
+vim.keymap.set("n", "<leader>ob", "<cmd>Neotree current buffers<cr>", { desc = "NeoTree Buffers" })
 
 -- Resize window using <Alt> arrow keys
 vim.keymap.set("n", "<A-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
 vim.keymap.set("n", "<A-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 vim.keymap.set("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 vim.keymap.set("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+
+-- Git
+vim.keymap.set("n", "<leader>gg", function()
+  neogit.open({ cwd = "%:p:h" })
+end, { desc = "Open Neogit" })
+vim.keymap.set("n", "<leader>gG", neogit.open, { desc = "Open Neogit (CWD)" })
 
 -- buffers
 vim.keymap.set("n", "<leader>bp", "<cmd>bprev<cr>", { desc = "Previous Buffer" })
@@ -39,9 +47,14 @@ vim.keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 -- files
 vim.keymap.set("n", "<leader>fs", "<cmd>wa<cr>", { desc = "Save All Files" })
 
+-- vimux
+vim.keymap.set("n", "<leader>pp", "<cmd>VimuxPromptCommand<cr>", { desc = "Vimux Prompt" })
+vim.keymap.set("n", "<leader>pr", "<cmd>VimuxRunLastCommand<cr>", { desc = "Vimux Re-Run" })
+vim.keymap.set("n", "<leader>pi", "<cmd>VimuxInspectRunner<cr>", { desc = "Vimux Inspect" })
+
 -- visual mode --
-vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
+vim.keymap.set("v", "K", "<cmd>m '<-2<cr>gv=gv")
+vim.keymap.set("v", "J", "<cmd>m '>+1<cr>gv=gv")
 vim.keymap.set("v", "jk", "<ESC>")
 -- end visual mmode --
 

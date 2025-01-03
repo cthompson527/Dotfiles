@@ -29,6 +29,36 @@ return {
   },
 
   {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
+
+  { "preservim/vimux" },
+
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional -> Diffs
+      "nvim-telescope/telescope.nvim", -- optional
+    },
+    config = true,
+  },
+
+  {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -111,9 +141,9 @@ return {
       -- return true if you don't want this server to be setup with lspconfig
       ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
       setup = {
-        -- example to setup with typescript.nvim
         tsserver = function(_, opts)
           require("typescript").setup({ server = opts })
+          -- example to setup with typescript.nvim
           return true
         end,
         -- Specify * to use this function as a fallback for any server
@@ -137,9 +167,11 @@ return {
         "html",
         "javascript",
         "json",
+        "elixir",
         "lua",
         "markdown",
         "markdown_inline",
+        "odin",
         "python",
         "query",
         "regex",
@@ -147,6 +179,7 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "zig",
       },
     },
   },
