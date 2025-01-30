@@ -17,10 +17,21 @@ local permission_hlgroups = {
 }
 
 return {
-  -- add personal project-run
-  { "cthompson527/project-run.nvim" },
-
   { "liuchengxu/space-vim-theme" },
+
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+
+      -- Only one of these is needed.
+      "nvim-telescope/telescope.nvim", -- optional
+      "ibhagwan/fzf-lua", -- optional
+      "echasnovski/mini.pick", -- optional
+    },
+    config = true,
+  },
 
   -- Configure LazyVim to load gruvbox
   {
@@ -84,6 +95,7 @@ return {
       ---@type lspconfig.options
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
+        gleam = {},
         pyright = {},
       },
     },
@@ -149,6 +161,7 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "zig",
       },
     },
   },
@@ -292,4 +305,11 @@ return {
       use_default_keymaps = false,
     },
   },
+  {
+    "aserowy/tmux.nvim",
+    opts = function()
+      require("tmux").setup()
+    end,
+  },
+  "preservim/vimux",
 }
