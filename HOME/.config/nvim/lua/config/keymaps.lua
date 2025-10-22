@@ -62,6 +62,14 @@ vim.keymap.set("v", "jk", "<ESC>")
 vim.keymap.set("i", "jk", "<Esc>")
 -- end insert mode --
 
+-- neogit --
+local neogit = require("neogit")
+vim.keymap.set("n", "<leader>gg", neogit.open, { desc = "Open Git" })
+
+vim.keymap.set("n", "<leader>pp", "<cmd>VimuxPromptCommand<cr>", { desc = "Vimux Prompt Command" })
+vim.keymap.set("n", "<leader>pr", "<cmd>VimuxRunLastCommand<cr>", { desc = "Vimux Run Last Command" })
+vim.keymap.set("n", "<leader>pi", "<cmd>VimuxInspectRunner<cr>", { desc = "Vimux Inspect Runner" })
+
 local harpoon = require("harpoon")
 
 -- REQUIRED
