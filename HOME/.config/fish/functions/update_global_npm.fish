@@ -1,0 +1,1 @@
+/Users/corythompson/dotfiles/HOME/.config/fish/functions/update_global_npm.fish

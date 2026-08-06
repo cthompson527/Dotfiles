@@ -1,8 +1,8 @@
 [init]
     defaultBranch = main
 [user]
-    email = cory.thompson527@gmail.com
-    name = Cory Thompson
+	email = cory.thompson@mantl.com
+	name = Cory Thompson
 [pull]
     rebase = false
     ffonly = true
@@ -15,8 +15,10 @@
 [core]
     editor = nvim
     pager = delta
+	excludesFiles = /Users/corythompson/.config/git/ignore
+	excludesFile = /Users/corythompson/.config/git/ignore
 [push]
-    default = matching
+	default = upstream
 [difftool]
     prompt = false
 [interactive]

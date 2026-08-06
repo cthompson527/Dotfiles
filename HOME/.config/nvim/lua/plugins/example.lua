@@ -9,13 +9,6 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 
-local permission_hlgroups = {
-  ['-'] = 'NonText',
-  ['r'] = 'DiagnosticSignWarn',
-  ['w'] = 'DiagnosticSignError',
-  ['x'] = 'DiagnosticSignOk',
-}
-
 return {
   { "liuchengxu/space-vim-theme" },
 
@@ -62,6 +55,76 @@ return {
   { "preservim/vimux" },
 
   {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-neotest/neotest-jest",
+    },
+    config = function()
+      -- Get the jest adapter
+      local jest_adapter = require("neotest-jest")({
+        jestCommand = "pnpm test",
+        cwd = function(path)
+          return vim.fs.root(path, "package.json")
+        end,
+        jestConfigFile = function(path)
+          local root = vim.fs.root(path, "package.json")
+          if root then
+            local config = root .. "/jest.config.js" -- or .ts
+            if vim.loop.fs_stat(config) then
+              return config
+            end
+          end
+          return nil
+        end,
+      })
+
+      require("neotest").setup({
+        -- Pass the adapter in a list
+        adapters = { jest_adapter },
+
+        -- If the error persists, explicitly define these common fields
+        -- to satisfy the strict type checker:
+        status = { enabled = true },
+        icons = { failed = "✘", passed = "✔" },
+        quickfix = { enabled = true, open = true },
+      })
+      -- require("neotest").setup({
+      --   adapters = {
+      --     require("neotest-jest")({
+      --       jestCommand = "npm test --",
+      --       env = { CI = true },
+      --       cwd = function(path)
+      --         return vim.fn.getcwd()
+      --       end,
+      --     }),
+      --   },
+      -- })
+    end,
+    -- opts = function()
+    --   require("neotest").setup({
+    --     adapters = {
+    --       require("neotest-jest")({
+    --         jestCommand = "npm test --",
+    --         jestArguments = function(defaultArguments, context)
+    --           return defaultArguments
+    --         end,
+    --         jestConfigFile = "custom.jest.config.ts",
+    --         env = { CI = true },
+    --         cwd = function(path)
+    --           return vim.fn.getcwd()
+    --         end,
+    --         isTestFile = require("neotest-jest.jest-util").defaultIsTestFile,
+    --       }),
+    --     },
+    --   })
+    -- end,
+  },
+
+  {
     "NeogitOrg/neogit",
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
@@ -82,6 +145,13 @@ return {
     "folke/trouble.nvim",
     -- opts will be merged with the parent spec
     opts = { use_diagnostic_signs = true },
+    keys = {
+      {
+        "<leader>cs",
+        "<cmd>Trouble symbols toggle win.size=60<cr>",
+        desc = "Symbols (Trouble)",
+      },
+    },
   },
 
   {
@@ -149,17 +219,7 @@ return {
   -- add tsserver and setup with typescript.nvim instead of lspconfig
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      "jose-elias-alvarez/typescript.nvim",
-      init = function()
-        -- TODO: Figure this out because we have a deprecated error
-        -- require("Snacks.util.lsp").lsp.on_attach(function(_, buffer)
-        --   -- stylua: ignore
-        --   vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
-        --   vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
-        -- end)
-      end,
-    },
+    dependencies = {},
     ---@class PluginLspOpts
     opts = {
       ---@type lspconfig.options
@@ -171,11 +231,11 @@ return {
       -- return true if you don't want this server to be setup with lspconfig
       ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
       setup = {
-        tsserver = function(_, opts)
-          require("typescript").setup({ server = opts })
-          -- example to setup with typescript.nvim
-          return true
-        end,
+        -- tsserver = function(_, opts)
+        --   require("typescript").setup({ server = opts })
+        --   -- example to setup with typescript.nvim
+        --   return true
+        -- end,
         -- Specify * to use this function as a fallback for any server
         -- ["*"] = function(server, opts) end,
       },
@@ -230,6 +290,9 @@ return {
     event = "VeryLazy",
     opts = function(_, opts)
       table.insert(opts.sections.lualine_x, "😄")
+      opts.sections.lualine_c[4] = {
+        LazyVim.lualine.pretty_path({ length = 6 }),
+      }
     end,
   },
 
@@ -301,48 +364,6 @@ return {
     end,
   },
 
-  {
-    "stevearc/oil.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      view_options = {
-        show_hidden = true,
-      },
-      columns = {
-        {
-          "permissions",
-          highlight = function(permission_str)
-            local hls = {}
-            for i = 1, #permission_str do
-              local char = permission_str:sub(i, i)
-              table.insert(hls, { permission_hlgroups[char], i - 1, i })
-            end
-            return hls
-          end,
-        },
-        { "size", highlight = "Special" },
-        { "mtime", highlight = "Number" },
-        "icon",
-      },
-      keymaps = {
-        ["g?"] = "actions.show_help",
-        ["<CR>"] = "actions.select",
-        ["<C-s>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
-        ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
-        ["<C-p>"] = "actions.preview",
-        ["<C-c>"] = "actions.close",
-        ["-"] = "actions.parent",
-        ["_"] = "actions.open_cwd",
-        ["`"] = "actions.cd",
-        ["~"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory" },
-        ["gs"] = "actions.change_sort",
-        ["gx"] = "actions.open_external",
-        ["g."] = "actions.toggle_hidden",
-        ["g\\"] = "actions.toggle_trash",
-      },
-      use_default_keymaps = false,
-    },
-  },
   {
     "aserowy/tmux.nvim",
     opts = function()

@@ -29,3 +29,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export VCPKG_ROOT="$HOME/vcpkg"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# Added by Configure-Netskope-Local-CA-Bundle-MacOS.sh
+[ -f "$HOME/.netskope/netskope-ca.env" ] && . "$HOME/.netskope/netskope-ca.env"
+
